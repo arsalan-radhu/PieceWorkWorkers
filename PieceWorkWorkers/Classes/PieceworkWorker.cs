@@ -28,12 +28,12 @@ namespace PieceWorkWorkers.Classes
         private static int overallMessages;
 
         //CONSTANTS
-        private const int zero = 0;
+        internal const int zero = 0;
         private const int firstThreshold = 1250;
         private const int secondThreshold = 2500;
         private const int thirdThreshold = 3750;
         private const int lastThreshold = 5000;
-        private const int maxMessages = 15000;
+        internal const int maxMessages = 15000;
 
         private const decimal firstThresholdPay = 0.02M;
         private const decimal secondThresholdPay = 0.024M;
