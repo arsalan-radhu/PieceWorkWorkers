@@ -180,18 +180,6 @@ namespace PieceWorkWorkers.Classes
             }
         }
 
-
-        /// <summary>
-        /// Save the successful entries into a log file.
-        /// </summary>
-        /// <param name="message"></param>
-        public static void logFunction(string message)
-        {
-            string logPath = "../../../log.txt";
-            StreamWriter log = new StreamWriter(logPath, true);
-            log.WriteLine($"{DateTime.Now}: {message}");
-            log.Close();
-        }
         #endregion
     }
 

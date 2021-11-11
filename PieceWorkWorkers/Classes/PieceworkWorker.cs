@@ -12,9 +12,7 @@
 
 using PieceWorkWorkers.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace PieceWorkWorkers.Classes
 {
@@ -23,25 +21,24 @@ namespace PieceWorkWorkers.Classes
         #region "Variable declarations"
 
         // Instance variables
-        private int employeeMessages;
+        internal int employeeMessages;
 
         // Shared class variables
-        private static int overallMessages;
-        private PieceworkWorkerModel modelInstance;
+        internal static int overallMessages;
 
         //CONSTANTS
         internal const int zero = 0;
-        private const int firstThreshold = 1250;
-        private const int secondThreshold = 2500;
-        private const int thirdThreshold = 3750;
-        private const int lastThreshold = 5000;
+        internal const int firstThreshold = 1250;
+        internal const int secondThreshold = 2500;
+        internal const int thirdThreshold = 3750;
+        internal const int lastThreshold = 5000;
         internal const int maxMessages = 15000;
 
-        private const decimal firstThresholdPay = 0.02M;
-        private const decimal secondThresholdPay = 0.024M;
-        private const decimal thirdThresholdPay = 0.028M;
-        private const decimal fourthThresholdPay = 0.034M;
-        private const decimal lastThresholdPay = 0.04M;
+        internal const decimal firstThresholdPay = 0.02M;
+        internal const decimal secondThresholdPay = 0.024M;
+        internal const decimal thirdThresholdPay = 0.028M;
+        internal const decimal fourthThresholdPay = 0.034M;
+        internal const decimal lastThresholdPay = 0.04M;
 
         // Constants for exception parameter name
         public const string MessagesParameters = "messages";
@@ -95,6 +92,9 @@ namespace PieceWorkWorkers.Classes
         }
 
         #endregion
+
+        #region Constructors
+
         /// <summary>
         /// PieceworkWorker constructor: empty constructor used strictly for inheritance and instantiation
         /// </summary>
@@ -123,6 +123,9 @@ namespace PieceWorkWorkers.Classes
             FindPay();
 
         }
+
+        #endregion
+
 
         #region "Properties"
         /// <summary>

@@ -10,12 +10,22 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+// PieceworkWorkerModel.cs
+//         Title: IncInc Payroll (Piecework)
+// Last Modified: 11 November 2021
+//    Written By: Arsalan Arif Radhu
+// Adapted from PieceworkWorker by Kyle Chapman, September 2019
+// 
+// This is a class representing individual worker objects. Each stores
+// their own name and number of messages and the class methods allow for
+// calculation of the worker's pay and for updating of shared summary
+// values. Name and messages are received as strings.
+// This is being used as part of a piecework payroll application.
+
+
 using PieceWorkWorkers.Classes;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.VisualBasic.CompilerServices;
+
 
 namespace PieceWorkWorkers.Models
 {
