@@ -10,6 +10,7 @@
 // values. Name and messages are received as strings.
 // This is being used as part of a piecework payroll application.
 
+using PieceWorkWorkers.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace PieceWorkWorkers.Classes
 
         // Shared class variables
         private static int overallMessages;
+        private PieceworkWorkerModel modelInstance;
 
         //CONSTANTS
         internal const int zero = 0;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PieceWorkWorkers.Models;
+using PieceWorkWorkers.Classes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,7 +21,31 @@ namespace PieceWorkWorkers.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var modelInstance = new PieceworkWorkerModel();
+
+            modelInstance.TotalWorkers = Worker.TotalWorkers;
+            modelInstance.TotalMessages = PieceworkWorker.TotalMessages;
+            modelInstance.TotalPay = Worker.TotalPay;
+            modelInstance.AveragePay = Worker.AveragePay;
+
+            return View(modelInstance);
+        }
+
+        [HttpPost]
+        public IActionResult Index(PieceworkWorkerModel modelInstance)
+        {
+            if (ModelState.IsValid)
+            {
+                var workerInstance = new PieceworkWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
+
+                modelInstance.Pay = workerInstance.Pay;
+            }
+            modelInstance.TotalWorkers = Worker.TotalWorkers;
+            modelInstance.TotalMessages = PieceworkWorker.TotalMessages;
+            modelInstance.TotalPay = Worker.TotalPay;
+            modelInstance.AveragePay = Worker.AveragePay;
+
+            return View(modelInstance);
         }
 
         public IActionResult Privacy()

@@ -58,7 +58,31 @@ namespace PieceWorkWorkers.Models
         /// </summary>
         public decimal TotalPay { get; set;}
 
+        /// <summary>
+        /// The total number of workers 
+        /// </summary>
+        public decimal TotalWorkers { get; set; }
+
+        /// <summary>
+        /// The average pay of workers 
+        /// </summary>
+        public decimal AveragePay { get; set; }
+
+        /// <summary>
+        /// Parameterized constructor
+        /// </summary>
+        /// <param name="nameValue"></param>
+        /// <param name="lastNameValue"></param>
+        /// <param name="messagesValue"></param>
         public PieceworkWorkerModel(string nameValue, string lastNameValue, string messagesValue)
+        {
+
+        }
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public PieceworkWorkerModel()
         {
 
         }
