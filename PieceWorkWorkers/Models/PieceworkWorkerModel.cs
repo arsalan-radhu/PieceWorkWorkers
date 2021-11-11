@@ -39,34 +39,34 @@ namespace PieceWorkWorkers.Models
         /// The worker's messages
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "You must enter number of messages sent.")]
-        [Range((int)PieceworkWorker.zero, (int)PieceworkWorker.maxMessages, ErrorMessage = "The number of messages should be between 0 and 15,000")]
+        [Range(PieceworkWorker.zero, PieceworkWorker.maxMessages, ErrorMessage = "The number of messages should be between 0 and 15,000")]
         [Display(Name = "Messages: ")]
-        public int Messages { get; set; }
+        public string Messages { get; set; }
 
         /// <summary>
         /// The workers total messages
         /// </summary>
-        public int TotalMessages { get; set;}
+        public static int TotalMessages { get; set;}
         
         /// <summary>
         /// The worker's Pay
         /// </summary>
-        public decimal Pay { get; set;}
+        public static decimal Pay { get; set;}
 
         /// <summary>
         /// The workers Total Pay
         /// </summary>
-        public decimal TotalPay { get; set;}
+        public static decimal TotalPay { get; set;}
 
         /// <summary>
         /// The total number of workers 
         /// </summary>
-        public decimal TotalWorkers { get; set; }
+        public static decimal TotalWorkers { get; set; }
 
         /// <summary>
         /// The average pay of workers 
         /// </summary>
-        public decimal AveragePay { get; set; }
+        public static decimal AveragePay { get; set; }
 
         /// <summary>
         /// Parameterized constructor

@@ -90,4 +90,30 @@
         </div>
 
     </div>
+
+    <!-- Controls for displaying totals and results-->
+    <div class="row">
+        <div class="col-md-4 offset-2">
+            <p>
+                This Worker's pay: @PieceworkWorkerModel.Pay.ToString("C")
+            </p>
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                Total Workers: @PieceworkWorkerModel.TotalWorkers.ToString()
+            </p>
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                Total Messages: @PieceworkWorkerModel.TotalMessages.ToString()
+            </p>
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                Total Pay: @PieceworkWorkerModel.TotalPay.ToString("C")
+            </p>
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                 Average Pay: @PieceworkWorkerModel.AveragePay.ToString("C")
+            </p>
+        </div>
+
+    </div>
 }

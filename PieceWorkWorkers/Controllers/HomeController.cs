@@ -2,11 +2,8 @@
 using Microsoft.Extensions.Logging;
 using PieceWorkWorkers.Models;
 using PieceWorkWorkers.Classes;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace PieceWorkWorkers.Controllers
 {
@@ -23,10 +20,10 @@ namespace PieceWorkWorkers.Controllers
         {
             var modelInstance = new PieceworkWorkerModel();
 
-            modelInstance.TotalWorkers = Worker.TotalWorkers;
-            modelInstance.TotalMessages = PieceworkWorker.TotalMessages;
-            modelInstance.TotalPay = Worker.TotalPay;
-            modelInstance.AveragePay = Worker.AveragePay;
+            PieceworkWorkerModel.TotalWorkers = Worker.TotalWorkers;
+            PieceworkWorkerModel.TotalMessages = PieceworkWorker.TotalMessages;
+            PieceworkWorkerModel.TotalPay = Worker.TotalPay;
+            PieceworkWorkerModel.AveragePay = Worker.AveragePay;
 
             return View(modelInstance);
         }
@@ -38,12 +35,12 @@ namespace PieceWorkWorkers.Controllers
             {
                 var workerInstance = new PieceworkWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
 
-                modelInstance.Pay = workerInstance.Pay;
+                PieceworkWorkerModel.Pay = workerInstance.Pay;
             }
-            modelInstance.TotalWorkers = Worker.TotalWorkers;
-            modelInstance.TotalMessages = PieceworkWorker.TotalMessages;
-            modelInstance.TotalPay = Worker.TotalPay;
-            modelInstance.AveragePay = Worker.AveragePay;
+            PieceworkWorkerModel.TotalWorkers = Worker.TotalWorkers;
+            PieceworkWorkerModel.TotalMessages = PieceworkWorker.TotalMessages;
+            PieceworkWorkerModel.TotalPay = Worker.TotalPay;
+            PieceworkWorkerModel.AveragePay = Worker.AveragePay;
 
             return View(modelInstance);
         }
