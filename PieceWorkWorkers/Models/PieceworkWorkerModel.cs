@@ -39,9 +39,9 @@ namespace PieceWorkWorkers.Models
         /// The worker's messages
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "You must enter number of messages sent.")]
-        [Range(PieceworkWorker.zero, PieceworkWorker.maxMessages, ErrorMessage = "The number of messages should be between 0 and 15,000")]
+        [Range(PieceworkWorker.zero+1, PieceworkWorker.maxMessages, ErrorMessage = "The number of messages should be between 0 and 15,000")]
         [Display(Name = "Messages: ")]
-        public string Messages { get; set; }
+        public int Messages { get; set; }
 
         /// <summary>
         /// The workers total messages

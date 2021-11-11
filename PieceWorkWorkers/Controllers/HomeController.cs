@@ -19,7 +19,7 @@ namespace PieceWorkWorkers.Controllers
         public IActionResult Index()
         {
             var modelInstance = new PieceworkWorkerModel();
-
+            PieceworkWorkerModel.Pay = 0M;
             PieceworkWorkerModel.TotalWorkers = Worker.TotalWorkers;
             PieceworkWorkerModel.TotalMessages = PieceworkWorker.TotalMessages;
             PieceworkWorkerModel.TotalPay = Worker.TotalPay;
@@ -36,6 +36,10 @@ namespace PieceWorkWorkers.Controllers
                 var workerInstance = new PieceworkWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
 
                 PieceworkWorkerModel.Pay = workerInstance.Pay;
+            }
+            else
+            {
+                PieceworkWorkerModel.Pay = 0M;
             }
             PieceworkWorkerModel.TotalWorkers = Worker.TotalWorkers;
             PieceworkWorkerModel.TotalMessages = PieceworkWorker.TotalMessages;
