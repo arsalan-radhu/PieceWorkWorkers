@@ -2,9 +2,92 @@
     ViewData["Title"] = "Worker Entry";
 }
 
+@using System.Runtime.InteropServices
 @model PieceWorkWorkers.Models.PieceworkWorkerModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <!-- Controls related to the worker's first name'-->
+    <div class="row">
+        <div class="col-md-2 offset-2">
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                <!-- Using an HTML help method to create the text box-->
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <!-- Using an HTML help method to create space for validation message-->
+                @Html.ValidationMessageFor(m => m.Name, string.Empty, new { @class = "text-danger" })
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Controls related to the worker's last name'-->
+    <div class="row">
+        <div class="col-md-2 offset-2">
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                <!-- Using an HTML help method to create the text box-->
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <!-- Using an HTML help method to create space for validation message-->
+                @Html.ValidationMessageFor(m => m.LastName, string.Empty, new { @class = "text-danger" })
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Controls related to the worker's number of messages-->
+    <div class="row">
+        <div class="col-md-2 offset-2">
+            <p>
+                <!-- Using an HTML help method to create the label-->
+                @Html.LabelFor(m => m.Messages, new { @class = "control-label" })
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                <!-- Using an HTML help method to create the text box-->
+                @Html.TextBoxFor(m => m.Messages, new { @class = "form-control" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <!-- Using an HTML help method to create space for validation message-->
+                @Html.ValidationMessageFor(m => m.Messages, string.Empty, new { @class = "text-danger" })
+            </p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-2">
+            <p>
+                <!-- This is the submit button-->
+                <input class="btn btn-primary" type="submit" name="Index" value="Calculate"/>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <!-- This is the clear button-->
+                @Html.ActionLink("Clear", "Index", "Home", new {@class = "btn btn-secondary"})
+            </p>
+        </div>
+
+    </div>
+}

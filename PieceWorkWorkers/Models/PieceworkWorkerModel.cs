@@ -25,13 +25,22 @@ namespace PieceWorkWorkers.Models
         /// The worker's first name
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "The worker must have a first name.")]
+        [Display(Name = "First Name: ")]
         public string Name { get; set; }
+
+        /// <summary>
+        /// The worker's last name
+        /// </summary>
+        [Required(AllowEmptyStrings = false, ErrorMessage = "The worker must have a last name.")]
+        [Display(Name = "Last Name: ")]
+        public string LastName { get; set; }
 
         /// <summary>
         /// The worker's messages
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "You must enter number of messages sent.")]
         [Range((int)PieceworkWorker.zero, (int)PieceworkWorker.maxMessages, ErrorMessage = "The number of messages should be between 0 and 15,000")]
+        [Display(Name = "Messages: ")]
         public int Messages { get; set; }
 
         /// <summary>
@@ -49,7 +58,7 @@ namespace PieceWorkWorkers.Models
         /// </summary>
         public decimal TotalPay { get; set;}
 
-        public PieceworkWorkerModel(string nameValue, string lastName, string messages)
+        public PieceworkWorkerModel(string nameValue, string lastNameValue, string messagesValue)
         {
 
         }

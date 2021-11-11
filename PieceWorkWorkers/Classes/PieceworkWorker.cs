@@ -107,11 +107,14 @@ namespace PieceWorkWorkers.Classes
         /// messages, sets and calculates values as appropriate.
         /// </summary>
         /// <param name="nameValue">the worker's name</param>
+        /// <param name="lastNameValue">the worker's last name</param>
         /// <param name="messageValue">a worker's number of messages sent</param>
-        public PieceworkWorker(string nameValue, string messagesValue)
+        public PieceworkWorker(string nameValue, string lastNameValue, string messagesValue)
         {
             // Validate and set the worker's name
             this.Name = nameValue;
+            // Validate and set the worker's last name
+            this.LastName = lastNameValue;
             // Validate Validate and set the worker's number of messages
             this.Messages = messagesValue;
             // Calculcate the worker's pay and update all summary values
