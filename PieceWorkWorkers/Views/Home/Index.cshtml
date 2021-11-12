@@ -89,7 +89,10 @@
         <div class="col-md-4">
             <p>
                 <!-- This is the clear button-->
-                @Html.ActionLink("Clear", "Index", "Home", new {  @class = "btn btn-secondary", role ="button"})
+                <a class="btn btn-outline-secondary" href="https://localhost:44372/" role="button">Clear</a>
+                <!-- @Html.ActionLink("Clear", "Index", "Home", new { @class = "btn btn-outline-secondary", role = "button" }) -->
+                
+
             </p>
         </div>
 
@@ -113,9 +116,12 @@
     {
         <!-- Controls for displaying totals and results-->
         <div class="row">
-            <div class="col-md-4 offset-2">
+            <div class="col-md-6 offset-2">
                 @if (PieceworkWorkerModel.Pay > 0M)
                 {
+                    <p>
+                        @PieceworkWorkerModel.ToString
+                    </p>
                     <p>
                         This Worker's pay: @PieceworkWorkerModel.Pay.ToString("C")
                     </p>

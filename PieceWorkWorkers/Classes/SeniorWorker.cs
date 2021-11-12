@@ -2,9 +2,7 @@
 //         Title: IncInc Payroll (Piecework)
 // Last Modified: 11 November 2021
 //    Written By: Arsalan Arif Radhu
-// Adapted from PieceworkWorker by Kyle Chapman, September 2019
-// 
-// This is a class representing individual worker objects. Each stores
+// This is a class representing senior individual worker objects. Each stores
 // their own name and number of messages and the class methods allow for
 // calculation of the worker's pay and for updating of shared summary
 // values. Name and messages are received as strings.
@@ -70,6 +68,15 @@ namespace PieceWorkWorkers.Classes
             overallPayroll += employeePay;
 
 
+        }
+
+        /// <summary>
+        /// Returns a string that represents the current Senior worker
+        /// </summary>
+        /// <returns>the object formatted as a descriptive string</returns>
+        public override string ToString()
+        {
+            return Name + " " + LastName + " - " + Messages + " messages - " + Pay.ToString("C") + " - Senior Worker";
         }
 
         #endregion

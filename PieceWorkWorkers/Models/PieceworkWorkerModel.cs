@@ -84,6 +84,11 @@ namespace PieceWorkWorkers.Models
         public bool IsSenior { get; set; }
         
         /// <summary>
+        /// Outputs the formatted string.
+        /// </summary>
+        public static string ToString { get; set; }
+
+        /// <summary>
         /// Parameterized constructor
         /// </summary>
         /// <param name="nameValue"></param>

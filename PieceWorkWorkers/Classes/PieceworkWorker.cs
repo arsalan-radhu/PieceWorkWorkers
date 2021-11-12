@@ -91,6 +91,15 @@ namespace PieceWorkWorkers.Classes
 
         }
 
+        /// <summary>
+        /// Returns a string that represents the current Piecework worker
+        /// </summary>
+        /// <returns>the object formatted as a descriptive string</returns>
+        public override string ToString()
+        {
+            return Name + " " + LastName + " - " + Messages +" messages - " + Pay.ToString("C");
+        }
+
         #endregion
 
         #region Constructors
@@ -125,7 +134,6 @@ namespace PieceWorkWorkers.Classes
         }
 
         #endregion
-
 
         #region "Properties"
         /// <summary>

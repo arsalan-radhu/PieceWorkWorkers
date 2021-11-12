@@ -58,6 +58,7 @@ namespace PieceWorkWorkers.Controllers
                 
 
                 PieceworkWorkerModel.Pay = workerInstance.Pay;
+                PieceworkWorkerModel.ToString = workerInstance.ToString();
             }
             else
             {
