@@ -45,7 +45,17 @@ namespace PieceWorkWorkers.Controllers
         {
             if (ModelState.IsValid)
             {
-                var workerInstance = new PieceworkWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
+                Worker workerInstance;
+                
+                if (modelInstance.IsSenior)
+                {
+                    workerInstance = new SeniorWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
+                }
+                else
+                {
+                    workerInstance = new PieceworkWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
+                }
+                
 
                 PieceworkWorkerModel.Pay = workerInstance.Pay;
             }

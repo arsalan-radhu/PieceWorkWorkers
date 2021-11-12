@@ -25,6 +25,12 @@ namespace PieceWorkWorkers.Classes
         //Constants
         internal const decimal FixedPay = 270;
 
+        internal const decimal firstThresholdPaySenior = 0.018M;
+        internal const decimal secondThresholdPaySenior = 0.021M;
+        internal const decimal thirdThresholdPaySenior = 0.024M;
+        internal const decimal fourthThresholdPaySenior = 0.027M;
+        internal const decimal lastThresholdPaySenior = 0.03M;
+
         #endregion
 
         #region "Class Methods"
@@ -34,23 +40,23 @@ namespace PieceWorkWorkers.Classes
 
             if (employeeMessages < firstThreshold && employeeMessages > zero)
             {
-                employeePay = (decimal)((employeeMessages * firstThresholdPay)+FixedPay);
+                employeePay = (decimal)((employeeMessages * firstThresholdPaySenior)+FixedPay);
             }
             else if (employeeMessages < secondThreshold && employeeMessages >= firstThreshold)
             {
-                employeePay = (decimal)((employeeMessages * secondThresholdPay)+FixedPay);
+                employeePay = (decimal)((employeeMessages * secondThresholdPaySenior)+FixedPay);
             }
             else if (employeeMessages < thirdThreshold && employeeMessages >= secondThreshold)
             {
-                employeePay = (decimal)((employeeMessages * thirdThresholdPay)+FixedPay);
+                employeePay = (decimal)((employeeMessages * thirdThresholdPaySenior)+FixedPay);
             }
             else if (employeeMessages < lastThreshold && employeeMessages >= thirdThreshold)
             {
-                employeePay = (decimal)((employeeMessages * fourthThresholdPay)+FixedPay);
+                employeePay = (decimal)((employeeMessages * fourthThresholdPaySenior)+FixedPay);
             }
             else if (employeeMessages >= lastThreshold && employeeMessages <= maxMessages)
             {
-                employeePay = (decimal)((employeeMessages * lastThresholdPay)+FixedPay);
+                employeePay = (decimal)((employeeMessages * lastThresholdPaySenior)+FixedPay);
             }
             else
             {
@@ -67,5 +73,39 @@ namespace PieceWorkWorkers.Classes
         }
 
         #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// PieceworkWorker constructor: empty constructor used strictly for inheritance and instantiation
+        /// </summary>
+        public SeniorWorker()
+        {
+
+        }
+
+
+        /// <summary>
+        /// PieceworkWorker constructor: accepts a worker's name and number of
+        /// messages, sets and calculates values as appropriate.
+        /// </summary>
+        /// <param name="nameValue">the worker's name</param>
+        /// <param name="lastNameValue">the worker's last name</param>
+        /// <param name="messageValue">a worker's number of messages sent</param>
+        public SeniorWorker(string nameValue, string lastNameValue, string messagesValue)
+        {
+            // Validate and set the worker's name
+            this.Name = nameValue;
+            // Validate and set the worker's last name
+            this.LastName = lastNameValue;
+            // Validate Validate and set the worker's number of messages
+            this.Messages = messagesValue;
+            // Calculcate the worker's pay and update all summary values
+            FindPay();
+
+        }
+
+        #endregion
+
     }
 }

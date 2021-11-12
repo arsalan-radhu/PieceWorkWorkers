@@ -94,6 +94,21 @@
         </div>
 
     </div>
+    <!-- Controls related to worker's status as piecework worker or senior worker.-->
+    <div class="row">
+
+        <div class="col-md-2 offset-2">
+            <p>
+                Piecework Worker: @Html.RadioButtonFor(m => m.IsSenior, false)
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                Senior Worker: @Html.RadioButtonFor(m => m.IsSenior, true, new { @checked = "checked"})
+            </p>
+        </div>
+
+    </div>
     @if (PieceworkWorkerModel.TotalWorkers != 0)
     {
         <!-- Controls for displaying totals and results-->

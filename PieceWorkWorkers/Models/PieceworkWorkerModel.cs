@@ -1,6 +1,6 @@
 ﻿// PieceworkWorker.cs
 //         Title: IncInc Payroll (Piecework)
-// Last Modified: 10 November 2021
+// Last Modified: 11 November 2021
 //    Written By: Arsalan Arif Radhu
 // Adapted from PieceworkWorker by Kyle Chapman, September 2019
 // 
@@ -78,6 +78,11 @@ namespace PieceWorkWorkers.Models
         /// </summary>
         public static decimal AveragePay { get; set; }
 
+        /// <summary>
+        /// Indicates whether the worker is Senior or not
+        /// </summary>
+        public bool IsSenior { get; set; }
+        
         /// <summary>
         /// Parameterized constructor
         /// </summary>
