@@ -1,6 +1,6 @@
 ﻿// Worker.cs
 //         Title: IncInc Payroll (Piecework)
-// Last Modified: 10 November 2021
+// Last Modified: 12 November 2021
 //    Written By: Arsalan Arif Radhu
 // Adapted from PieceworkWorker by Kyle Chapman, September 2019
 // 
@@ -11,10 +11,6 @@
 // This is being used as part of a piecework payroll application.
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PieceWorkWorkers.Classes
 {
@@ -71,6 +67,7 @@ namespace PieceWorkWorkers.Classes
         }
 
         #endregion
+
         #region "Property Procedures"
 
         /// <summary>

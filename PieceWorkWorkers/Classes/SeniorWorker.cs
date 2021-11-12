@@ -1,5 +1,5 @@
 ﻿// SeniorWorker.cs
-//         Title: IncInc Payroll (Piecework)
+//         Title: IncInc Payroll (Senior Piecework Worker)
 // Last Modified: 11 November 2021
 //    Written By: Arsalan Arif Radhu
 // This is a class representing senior individual worker objects. Each stores
@@ -10,9 +10,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PieceWorkWorkers.Classes
 {
@@ -33,6 +30,12 @@ namespace PieceWorkWorkers.Classes
 
         #region "Class Methods"
 
+        /// <summary>
+        /// Currently called in the constructor, the FindPay() method is
+        /// used to calculate a senior worker's pay using threshold values to
+        /// change how much a worker is paid per message. This also updates
+        /// all summary values.
+        /// </summary>
         protected override void FindPay()
         {
 
@@ -84,7 +87,7 @@ namespace PieceWorkWorkers.Classes
         #region Constructors
 
         /// <summary>
-        /// PieceworkWorker constructor: empty constructor used strictly for inheritance and instantiation
+        /// SeniorWorker constructor: empty constructor used strictly for inheritance and instantiation
         /// </summary>
         public SeniorWorker()
         {
@@ -93,7 +96,7 @@ namespace PieceWorkWorkers.Classes
 
 
         /// <summary>
-        /// PieceworkWorker constructor: accepts a worker's name and number of
+        /// SeniorWorker constructor: accepts a senior worker's first name, last name and number of
         /// messages, sets and calculates values as appropriate.
         /// </summary>
         /// <param name="nameValue">the worker's name</param>

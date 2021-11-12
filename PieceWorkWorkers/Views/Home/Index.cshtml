@@ -3,7 +3,7 @@
 }
 <!-- Name: Arsalan Arif Radhu
      Student ID: 100813965
-     Date 11 November 2021 
+     Date: 11 November 2021 
      Description: The index page having all the labels,textboxes and buttons etc
 -->
 @using System.Runtime.InteropServices
@@ -112,6 +112,7 @@
         </div>
 
     </div>
+
     @if (PieceworkWorkerModel.TotalWorkers != 0)
     {
         <!-- Controls for displaying totals and results-->
@@ -123,24 +124,25 @@
                         @PieceworkWorkerModel.ToString
                     </p>
                     <p>
+                        <!--Shows the formatted string-->
                         This Worker's pay: @PieceworkWorkerModel.Pay.ToString("C")
                     </p>
                 }
 
                 <p>
-                    <!-- Using an HTML help method to create the label-->
+                    <!-- Shows the total number of workers-->
                     Total Workers: @PieceworkWorkerModel.TotalWorkers.ToString()
                 </p>
                 <p>
-                    <!-- Using an HTML help method to create the label-->
+                    <!-- Shows the total number of messages sent-->
                     Total Messages: @PieceworkWorkerModel.TotalMessages.ToString()
                 </p>
                 <p>
-                    <!-- Using an HTML help method to create the label-->
+                    <!-- Shows the Total Pay-->
                     Total Pay: @PieceworkWorkerModel.TotalPay.ToString("C")
                 </p>
                 <p>
-                    <!-- Using an HTML help method to create the label-->
+                    <!-- Shows the Average pay-->
                     Average Pay: @PieceworkWorkerModel.AveragePay.ToString("C")
                 </p>
             </div>

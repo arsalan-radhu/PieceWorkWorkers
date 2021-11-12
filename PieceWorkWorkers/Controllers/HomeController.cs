@@ -27,7 +27,11 @@ namespace PieceWorkWorkers.Controllers
         {
             _logger = logger;
         }
-
+        
+        /// <summary>
+        /// Sets the default values when the page is first rendered
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             var modelInstance = new PieceworkWorkerModel();
@@ -40,6 +44,11 @@ namespace PieceWorkWorkers.Controllers
             return View(modelInstance);
         }
 
+        /// <summary>
+        /// Checks whether the Senior worker is selected or not, then calls the respective constructor to set values.
+        /// </summary>
+        /// <param name="modelInstance"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Index(PieceworkWorkerModel modelInstance)
         {
@@ -49,14 +58,15 @@ namespace PieceWorkWorkers.Controllers
                 
                 if (modelInstance.IsSenior)
                 {
+                    // Calls the senior worker constructor and sets values.
                     workerInstance = new SeniorWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
                 }
                 else
                 {
+                    // Calls the Piecework Worker worker constructor and sets values.
                     workerInstance = new PieceworkWorker(modelInstance.Name, modelInstance.LastName, modelInstance.Messages.ToString());
                 }
                 
-
                 PieceworkWorkerModel.Pay = workerInstance.Pay;
                 PieceworkWorkerModel.ToString = workerInstance.ToString();
             }
@@ -64,6 +74,7 @@ namespace PieceWorkWorkers.Controllers
             {
                 PieceworkWorkerModel.Pay = 0M;
             }
+            //Displays the values by setting them.
             PieceworkWorkerModel.TotalWorkers = Worker.TotalWorkers;
             PieceworkWorkerModel.TotalMessages = PieceworkWorker.TotalMessages;
             PieceworkWorkerModel.TotalPay = Worker.TotalPay;

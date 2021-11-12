@@ -10,7 +10,6 @@
 // values. Name and messages are received as strings.
 // This is being used as part of a piecework payroll application.
 
-using PieceWorkWorkers.Models;
 using System;
 
 
@@ -49,7 +48,7 @@ namespace PieceWorkWorkers.Classes
         #region "Class methods"
 
         /// <summary>
-        /// Currently called in the constructor, the findPay() method is
+        /// Currently called in the constructor, the FindPay() method is
         /// used to calculate a worker's pay using threshold values to
         /// change how much a worker is paid per message. This also updates
         /// all summary values.

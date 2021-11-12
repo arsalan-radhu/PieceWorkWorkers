@@ -1,16 +1,4 @@
-﻿// PieceworkWorker.cs
-//         Title: IncInc Payroll (Piecework)
-// Last Modified: 11 November 2021
-//    Written By: Arsalan Arif Radhu
-// Adapted from PieceworkWorker by Kyle Chapman, September 2019
-// 
-// This is a model for the data required by the pages.
-// It effectively holds and validates all the user input so that a
-// worker object can be created by the controller.
-
-using System;
-using System.Collections.Generic;
-// PieceworkWorkerModel.cs
+﻿// PieceworkWorkerModel.cs
 //         Title: IncInc Payroll (Piecework)
 // Last Modified: 11 November 2021
 //    Written By: Arsalan Arif Radhu
@@ -21,6 +9,10 @@ using System.Collections.Generic;
 // calculation of the worker's pay and for updating of shared summary
 // values. Name and messages are received as strings.
 // This is being used as part of a piecework payroll application.
+
+using System;
+using System.Collections.Generic;
+
 
 
 using PieceWorkWorkers.Classes;
